@@ -7,6 +7,6 @@ initial_supply = 1000000
 
 def main():
     account = get_account()
-    okpe_token = OkpeToken.deploy(initial_supply, {"from": account})
+    okpe_token = OkpeToken.deploy(initial_supply, {"from": account}, publish_source=True)
     print(okpe_token.name())
     print(okpe_token.address)

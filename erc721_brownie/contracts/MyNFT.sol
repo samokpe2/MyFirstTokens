@@ -13,10 +13,10 @@ contract MYNFT is ERC721, VRFConsumerBase {
     bytes32 public keyhash;
     uint256 public fee;
     enum ME_TYPES{ME, ME2, ME3}
-    mapping(uint256 => Breed) public tokenIdToBreed;
+    mapping(uint256 => ME_TYPES) public tokenIdToBreed;
     mapping(bytes32 => address) public requestIdToSender;
     event requestedCollectible(bytes32 indexed requestId, address requester);
-    event breedAssigned(uint256 indexed tokenId, Breed breed);
+    event breedAssigned(uint256 indexed tokenId, ME_TYPES types);
 
     constructor(address _vrfCoordinator, address _linkToken, bytes32 _keyhash, uint256 _fee) public 
     VRFConsumerBase(_vrfCoordinator, _linkToken)
@@ -34,10 +34,10 @@ contract MYNFT is ERC721, VRFConsumerBase {
     }
 
     function fulfillRandomness(bytes32 requestId, uint256 randomNumber) internal override {
-        Breed breed = ME_TYPES(randomNumber % 3);
+        ME_TYPES types = ME_TYPES(randomNumber % 3);
         uint256 newTokenId = tokenCounter;
-        tokenIdToBreed[newTokenId] = breed;
-        emit breedAssigned(newTokenId, breed);
+        tokenIdToBreed[newTokenId] = types;
+        emit breedAssigned(newTokenId, types);
         address owner = requestIdToSender[requestId];
         _safeMint(owner, newTokenId);
         tokenCounter = tokenCounter + 1;

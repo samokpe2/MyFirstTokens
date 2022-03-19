@@ -7,9 +7,9 @@ import json
 import os
 
 breed_to_image_uri = {
-    "PUG": "https://ipfs.io/ipfs/QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png",
-    "SHIBA_INU": "https://ipfs.io/ipfs/QmYx6GsYAKnNzZ9A6NvEKV9nf1VaDzJrqDR23Y8YSkebLU?filename=shiba-inu.png",
-    "ST_BERNARD": "https://ipfs.io/ipfs/QmUPjADFGEKmfohdTaNcWhp7VGk26h5jXDA7v3VtTnTLcW?filename=st-bernard.png",
+    "ME": "https://ipfs.io/ipfs/QmZxQhLnHgHj3UZjnsZTLQC3Q7UCJAU7iN7htU6q9NNwnb?filename=me.jpeg",
+    "ME2": "https://ipfs.io/ipfs/QmegHiqfzCS3KSLHjsuuPYR3siTHnyqayEQBXMd31cxyoZ?filename=me2.jpeg",
+    "ME3": "https://ipfs.io/ipfs/QmUPjADFGEKmfohdTaNcWhp7VGk26h5jXDA7v3VtTnTLcW?filename=me3.jpeg",
 }
 
 
@@ -20,7 +20,7 @@ def main():
     for token_id in range(number_of_advanced_collectibles):
         breed = get_breed(mynft.tokenIdToBreed(token_id))
         metadata_file_name = (
-            f"./metadata/{network.show_active()}/{token_id}-{breed}.json"
+            f"./metadata/{network.show_active()}/{breed}.json"
         )
         collectible_metadata = metadata_template
         if Path(metadata_file_name).exists():
@@ -28,13 +28,14 @@ def main():
         else:
             print(f"Creating Metadata file: {metadata_file_name}")
             collectible_metadata["name"] = breed
-            collectible_metadata["description"] = f"An adorable {breed} pup!"
-            image_path = "./img/" + breed.lower().replace("_", "-") + ".png"
+            collectible_metadata["description"] = f"An nice image of {breed} !"
+            image_path = "./img/" + breed.lower().replace("_", "-") + ".jpeg"
 
             image_uri = None
             if os.getenv("UPLOAD_IPFS") == "true":
                 image_uri = upload_to_ipfs(image_path)
             image_uri = image_uri if image_uri else breed_to_image_uri[breed]
+            
 
             collectible_metadata["image"] = image_uri
             with open(metadata_file_name, "w") as file:

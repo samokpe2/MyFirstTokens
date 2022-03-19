@@ -18,6 +18,7 @@ def deploy_and_create():
         config["networks"][network.show_active()]["keyhash"],
         config["networks"][network.show_active()]["fee"],
         {"from": account},
+        publish_source = True,
     )
     fund_with_link(mynft.address)
     creating_tx = mynft.createCollectible({"from": account})

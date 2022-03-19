@@ -6,3 +6,6 @@ Contract Address 0x76C7A4cB01eE3a592426ff0e35fcaC03Fb5288B6
 
 ERC 20 Deployed on kovan 
 Contract Address 0x68F90ed8AB3AD5bcb749ee7eB7F3194C07264A50
+
+ERC 721 Deployed on Rinkeby
+Contract Address 0x022D7CFfb4909B867A2B31349b46F9c78c0B4Cff

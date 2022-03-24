@@ -9,7 +9,7 @@ import os
 breed_to_image_uri = {
     "ME": "https://ipfs.io/ipfs/QmZxQhLnHgHj3UZjnsZTLQC3Q7UCJAU7iN7htU6q9NNwnb?filename=me.jpeg",
     "ME2": "https://ipfs.io/ipfs/QmegHiqfzCS3KSLHjsuuPYR3siTHnyqayEQBXMd31cxyoZ?filename=me2.jpeg",
-    "ME3": "https://ipfs.io/ipfs/QmUPjADFGEKmfohdTaNcWhp7VGk26h5jXDA7v3VtTnTLcW?filename=me3.jpeg",
+    "ME3": "https://ipfs.io/ipfs/QmT25tTj7rG3QsUnHiepbJcUwgZPKR8XtuPq4ge6dSHmUB?filename=me3.jpeg",
 }
 
 
@@ -32,7 +32,7 @@ def main():
             image_path = "./img/" + breed.lower().replace("_", "-") + ".jpeg"
 
             image_uri = None
-            if os.getenv("UPLOAD_IPFS") == "true":
+            if os.getenv("UPLOAD_IPFS") == "false":
                 image_uri = upload_to_ipfs(image_path)
             image_uri = image_uri if image_uri else breed_to_image_uri[breed]
             

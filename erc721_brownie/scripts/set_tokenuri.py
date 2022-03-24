@@ -2,9 +2,9 @@ from brownie import network, MYNFT
 from scripts.helpful_scripts import OPENSEA_URL, get_breed, get_account
 
 dog_metadata_dic = {
-    "ME": "https://ipfs.io/ipfs/QmZxQhLnHgHj3UZjnsZTLQC3Q7UCJAU7iN7htU6q9NNwnb?filename=ME.json",
+    "ME": "https://ipfs.io/ipfs/QmVKWzmG7bRfBursq1rqPuMc2Tmf3vzoH9gXX8xkxPGm17?filename=ME.json",
     "ME2": "https://ipfs.io/ipfs/QmegHiqfzCS3KSLHjsuuPYR3siTHnyqayEQBXMd31cxyoZ?filename=ME2.json",
-    "ME3": "https://ipfs.io/ipfs/QmT25tTj7rG3QsUnHiepbJcUwgZPKR8XtuPq4ge6dSHmUB?filename=ME3.json",
+    "ME3": "https://ipfs.io/ipfs/QmU4a1NTLn8GKPW7y6Sv7XXd8NqDAAEmKbmnWv5SFNdnGf?filename=ME3.json",
 }
 
 

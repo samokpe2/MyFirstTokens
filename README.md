@@ -18,3 +18,16 @@ https://ipfs.io/ipfs/QmU4a1NTLn8GKPW7y6Sv7XXd8NqDAAEmKbmnWv5SFNdnGf?filename=ME3
 
 https://testnets.opensea.io/assets/0x0D275049aC627aD527133196c1CA7967C7b722E1/0
 https://testnets.opensea.io/assets/0x0D275049aC627aD527133196c1CA7967C7b722E1/1
+
+
+Home Page
+https://gist.github.com/samokpe2/291e03f6cd8e21f7a9559da3f8524729
+
+About Page
+https://gist.github.com/samokpe2/58c4a7e736c3020e61d1472fb81d4f52
+
+Contact Page
+https://gist.github.com/samokpe2/2939aa013767eb2081c623a6b72714ce
+
+Css
+https://gist.github.com/samokpe2/e7602ee5526729011fdf64617d111607
